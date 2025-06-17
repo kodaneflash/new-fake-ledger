@@ -1,0 +1,11 @@
+{
+  "extends": "../../../../tsconfig.base",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./lib",
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "module": "esnext"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "entry": ["src/Xrp.ts"],
+  "ignoreUnused": ["jest-sonar"]
+}
