@@ -6,7 +6,8 @@ This document outlines the changes made to the Ledger Live Mobile application to
 
 A new file was created to act as the single source of truth for all static data.
 
-**File Location:** `apps/ledger-live-mobile/src/logic/staticData.ts`
+**File Location:** `
+apps/ledger-live-mobile/src/logic/staticData.ts`
 
 **Purpose:** This file defines the static accounts, settings (including the "device connected" state), and countervalues (prices) to be used in static mode.
 

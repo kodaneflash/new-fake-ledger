@@ -97,7 +97,7 @@ import { useDeviceManagementKit } from "@ledgerhq/live-dmk-mobile";
 import AppGeoBlocker from "LLM/features/AppGeoblocker";
 import { exportLargeMoverSelector } from "./reducers/largeMover";
 import { staticAccounts, staticSettings } from "~/logic/staticData";
-import { setAccounts } from "~/actions/accounts";
+import { replaceAccounts } from "~/actions/accounts";
 import { importSettings } from "~/actions/settings";
 
 if (Config.DISABLE_YELLOW_BOX) {
@@ -139,8 +139,7 @@ function App() {
 
   useEffect(() => {
     if (USE_STATIC_DATA) {
-      // @ts-expect-error Trust me bro
-      dispatch(setAccounts(staticAccounts));
+      dispatch(replaceAccounts(staticAccounts));
       // @ts-expect-error Trust me bro
       dispatch(importSettings(staticSettings));
     }

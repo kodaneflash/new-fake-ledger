@@ -1,8 +1,7 @@
 import { Account, AccountLike, ProtoNFT } from "@ledgerhq/types-live";
 import { BigNumber } from "bignumber.js";
 
-// This is a simplified structure. You may need to add more fields
-// to match the real Account type for full feature compatibility.
+// This structure matches the real Account type from @ledgerhq/types-live
 const BTC_1: Account = {
   type: "Account",
   id: "static-btc-1",
@@ -11,11 +10,10 @@ const BTC_1: Account = {
   index: 0,
   freshAddress: "1Cz2ZXb6Y6Aacb3B4xTj9uy422i626N4J5",
   freshAddressPath: "84'/0'/0'/0/0",
-  freshAddresses: [],
-  name: "Bitcoin 1 (Static)",
-  starred: true,
+  used: true,
   balance: new BigNumber("150000000"), // 1.5 BTC in satoshis
   spendableBalance: new BigNumber("150000000"),
+  creationDate: new Date("2023-01-01"),
   blockHeight: 800000,
   currency: {
     type: "CryptoCurrency",
@@ -27,11 +25,12 @@ const BTC_1: Account = {
     scheme: "bitcoin",
     color: "#ffae35",
     family: "bitcoin",
+    keywords: ["btc", "bitcoin"],
     units: [
       { name: "satoshi", code: "sat", magnitude: 0 },
       { name: "BTC", code: "BTC", magnitude: 8 },
     ],
-    explorerViews: [{ tx: "https://blockstream.info/tx/{hash}" }],
+    explorerViews: [{ tx: "https://blockstream.info/tx/$hash" }],
   },
   operationsCount: 0,
   operations: [],
@@ -46,7 +45,7 @@ const BTC_1: Account = {
 };
 
 // The list of all static accounts you want to display.
-export const staticAccounts: AccountLike[] = [BTC_1];
+export const staticAccounts: Account[] = [BTC_1];
 
 // This object will overwrite parts of the settings state.
 export const staticSettings = {
